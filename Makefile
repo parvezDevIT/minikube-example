@@ -1,6 +1,8 @@
 #
 # Makefile
 #
+SHELL := /bin/bash # To Fix the issue with the "source" command not being found in the default shell
+
 .EXPORT_ALL_VARIABLES:
 
 #set default ENV based on your username and hostname
