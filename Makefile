@@ -65,7 +65,7 @@ coverage: virtual-env requirements ## generate a coverage report for the unit te
 ci: unittest coverage ## unit tests and coverage report in one
 
 docker-image: ## Build a local version of the docker image for testing
-	docker build -f ops/docker/hello-world/Dockerfile -t hello-world .
+	docker build -f ops/docker/hello-world/Dockerfile -t hello-world-test .
 
 docker-stop: ## stop any running docker images from this build and remove ready for rebuild
 	docker stop hello-world-test || true
