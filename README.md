@@ -71,7 +71,7 @@ The solution will build and configure its own virtual environment so no preparat
 3. `make container-test` - builds a local docker image and tests the container endpoint
 4. `make deploy-k8s-service` - Builds and deploys the required images and services to minikube
 
-For a shortcut `make deploy-k8s-service` can be run independently and will just build and deploy with no testing.
+For a shortcut `make deploy-k8s-service` can be run independently and will just build and deploy with no testing
 
 ## For the curious
 
