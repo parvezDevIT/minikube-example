@@ -73,8 +73,9 @@ docker-stop: ## stop any running docker images from this build and remove ready 
 
 container-test: docker-image docker-stop ## build and test the docker image locally
 	docker run -d --name hello-world-test -p 5010:5010 hello-world
-	curl -s  http://localhost:5010/helloworld | grep -q 'Hello World' && echo -e "\033[0;32m**** Container Test Passed ****\033[0m" || echo -e "\033[0;31m**** Container Test Failed ****\033[0m"
-
+# 	to allow the container to start up and the flask app to be ready to serve requests
+	sleep 5s 
+	curl -s  http://localhost:5010/helloworld | grep -q 'Hello World!' && echo -e "\033[0;32m**** Container Test Passed ****\033[0m" || echo -e "\033[0;31m**** Container Test Failed ****\033[0m"
 	docker stop hello-world-test
 	docker rm hello-world-test
 
